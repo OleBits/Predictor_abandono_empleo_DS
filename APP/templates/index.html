@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictor de Cambio de Trabajo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">   
+</head>
+<body>
+    <h1>Predictor de Cambio de Trabajo en Data Science</h1>
+    <p>Completa el formulario para conocer si un trabajador está potencialmente buscando trabajo en otra empresa.</p>
+
+    <form action="/predict" method="post">
+        <label for="city_development_index">Índice de desarrollo:</label>
+        <input type="number" id="city_development_index" name="city_development_index" required step="any">
+
+        <label for="gender">Género:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Hombre</option>
+            <option value="Female">Mujer</option>
+            <option value="Other">Otro</option>
+        </select>
+ 
+        <label for="relevent_experience">Experiencia:</label>
+        <select id="relevent_experience" name="relevent_experience" required>
+            <option value="Has relevent experience">Con experiencia relevante</option>
+            <option value="No relevent experience">Sin experiencia relevante</option>
+        </select>
+
+        <label for="enrolled_university">Matriculación universitaria actual:</label>
+        <select id="enrolled_university" name="enrolled_university" required>
+            <option value="no_enrollment">No matriculado</option>
+            <option value="Full time course">A tiempo completo</option>
+            <option value="Part time course">A tiempo parcial</option>
+        </select>
+
+        <label for="education_level">Nivel educativo más alto alcanzado:</label>
+        <select id="education_level" name="education_level" required>
+            <option value="Graduate">Grado universitario o FP superior</option>
+            <option value="Masters">Master</option>
+            <option value="High School">Educación secundaria</option>
+            <option value="Primary School">Educación primaria</option>
+            <option value="Phd">Doctorado</option>
+        </select>
+
+        <label for="major_discipline">Área educativa:</label>
+        <select id="major_discipline" name="major_discipline" required>
+            <option value="STEM">Ciencia y tecnología</option>
+            <option value="Humanities">Humanidades</option>
+            <option value="Business Degree">Negocios</option>
+            <option value="Other">Otro</option>
+            <option value="Arts">Arte</option>
+            <option value="No Major">Sin especialidad</option>
+        </select>
+
+        <label for="experience">Años de experiencia:</label>
+        <input type="number" id="experience" name="experience" required>
+
+        <label for="company_size">Número de trabajores de la empresa actual:</label>
+        <select id="company_size" name="company_size" required>
+            <option value="<10">Menor a 10</option>
+            <option value="10/49">Entre 10 y 49</option>
+            <option value="50-99">Entre 50 y 99</option>
+            <option value="100-500">Entre 100 y 500</option>
+            <option value="500-999">Entre 500 y 999</option>
+            <option value="1000-4999">Entre 1000 y 4999</option>
+            <option value="5000-9999">Entre 5000 y 9999</option>
+            <option value="10000+">Mayor a 10000</option>
+        </select>
+
+        <label for="company_type">Tipo de compañía:</label>
+        <select id="company_type" name="company_type" required>
+            <option value="Pvt Ltd">Pvt Ltd</option>
+            <option value="Funded Startup">Startup financiada</option>
+            <option value="Public Sector">Sector público</option>
+            <option value="Early Stage Startup">Startup de nueva creación</option>
+            <option value="NGO">ONG</option>
+            <option value="Other">Otro</option>
+            <option value="Unknow">Otro</option>
+        </select>
+
+        <label for="last_new_job">Años en la empresa:</label>
+        <input type="number" id="last_new_job" name="last_new_job" required>
+       
+        <label for="training_hours">Horas formativas:</label>
+        <input type="number" id="training_hours" name="training_hours" required>
+
+        <input type="submit" value="Predecir">
+    </form>
+</body>
+</html>
